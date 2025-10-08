@@ -1,0 +1,16 @@
+SpeechRecognition
+pyaudio
+pyttsx3
+opencv-python
+Pillow
+newsapi-python
+requests
+pywhatkit
+wikipedia
+psutil
+geopy
+pyjokes
+pyautogui
+PyQt5
+openai
+python-dotenv
