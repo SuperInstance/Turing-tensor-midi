@@ -17,12 +17,6 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-NEWS_API_KEY = os.getenv("NEWS_API_KEY", "4c27f298feef4f588a754227e16c0a92")
-WEATHER_API_KEY = os.getenv("WEATHER_API_KEY", "8F87QLEGELYUCNZTSDJV3S5Q5")
-
-# Initialize NewsAPI
-newsapi = NewsApiClient(api_key=NEWS_API_KEY)
 
 # Initialize Text-to-Speech
 def init_engine():
@@ -617,4 +611,5 @@ def main():
 
 if __name__ == '__main__':
     startup()
+
     main()
