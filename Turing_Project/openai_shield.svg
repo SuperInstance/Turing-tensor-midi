@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  
+  <!-- Accent line top -->
+  <rect width="1200" height="4" fill="url(#accent)"/>
+  
+  <!-- Circuit pattern decoration -->
+  <g opacity="0.1" stroke="#3b82f6" stroke-width="1" fill="none">
+    <circle cx="100" cy="100" r="30"/>
+    <circle cx="1100" cy="300" r="40"/>
+    <line x1="100" y1="100" x2="200" y2="150"/>
+    <line x1="1100" y1="300" x2="1000" y2="250"/>
+    <circle cx="200" cy="150" r="5" fill="#3b82f6"/>
+    <circle cx="1000" cy="250" r="5" fill="#10b981"/>
+  </g>
+  
+  <!-- Main Title -->
+  <text x="600" y="120" font-family="'Courier New', monospace" font-size="56" font-weight="bold" fill="url(#accent)" text-anchor="middle" filter="url(#glow)">
+    TURING VOICE ASSISTANT
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="170" font-family="Arial, sans-serif" font-size="22" fill="#94a3b8" text-anchor="middle" font-style="italic">
+    "Intelligent Computing Meets Natural Conversation"
+  </text>
+  
+  <!-- Description Line 1 -->
+  <text x="600" y="230" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0" text-anchor="middle">
+    A sophisticated AI voice assistant inspired by Alan Turing's vision
+  </text>
+  
+  <!-- Description Line 2 -->
+  <text x="600" y="260" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0" text-anchor="middle">
+    featuring passive listening, natural language processing, and an authentic British accent
+  </text>
+  
+  <!-- Feature badges -->
+  <g transform="translate(250, 300)">
+    <rect width="160" height="35" rx="17.5" fill="#1e40af" opacity="0.3"/>
+    <rect width="160" height="35" rx="17.5" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="80" y="23" font-family="Arial, sans-serif" font-size="14" fill="#60a5fa" text-anchor="middle" font-weight="600">
+      🎤 Voice Control
+    </text>
+  </g>
+  
+  <g transform="translate(440, 300)">
+    <rect width="160" height="35" rx="17.5" fill="#065f46" opacity="0.3"/>
+    <rect width="160" height="35" rx="17.5" fill="none" stroke="#10b981" stroke-width="2"/>
+    <text x="80" y="23" font-family="Arial, sans-serif" font-size="14" fill="#34d399" text-anchor="middle" font-weight="600">
+      🧠 OpenAI GPT-4
+    </text>
+  </g>
+  
+  <g transform="translate(630, 300)">
+    <rect width="160" height="35" rx="17.5" fill="#7c2d12" opacity="0.3"/>
+    <rect width="160" height="35" rx="17.5" fill="none" stroke="#f97316" stroke-width="2"/>
+    <text x="80" y="23" font-family="Arial, sans-serif" font-size="14" fill="#fb923c" text-anchor="middle" font-weight="600">
+      👂 Passive Listen
+    </text>
+  </g>
+  
+  <g transform="translate(820, 300)">
+    <rect width="160" height="35" rx="17.5" fill="#581c87" opacity="0.3"/>
+    <rect width="160" height="35" rx="17.5" fill="none" stroke="#a855f7" stroke-width="2"/>
+    <text x="80" y="23" font-family="Arial, sans-serif" font-size="14" fill="#c084fc" text-anchor="middle" font-weight="600">
+      🇬🇧 British Accent
+    </text>
+  </g>
+  
+  <!-- Bottom accent line -->
+  <rect y="396" width="1200" height="4" fill="url(#accent)"/>
+</svg>
