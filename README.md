@@ -38,14 +38,14 @@
 - **🔄 AI Fallback System** - Uses multiple AI models (GPT-OSS-20B → Mistral-7B) for reliability
 - **📍 200+ Pre-configured Website Shortcuts** - Instant access to popular sites, educational platforms, and services
 - **🌐 Real-time Information** - Live weather, news, and web search capabilities
-- **⚡ Non-AI Version Available** - Run without OpenRouter API for cost-free operation with core features
+- **⚡ Non-AI Version Available** - Run without OpenAI API for cost-free operation with core features
 
 ## 🚀 Features
 
 ### Core Functionality
 - ✅ **Voice Recognition** - Hands-free control using Google Speech Recognition
 - ✅ **Text-to-Speech** - Natural voice responses with pyttsx3
-- ✅ **Conversational AI** - Context-aware responses using OpenRouter API
+- ✅ **Conversational AI** - Context-aware responses using OpenAI API
 - ✅ **Web Automation** - Open websites, search Google, play YouTube videos
 - ✅ **News Integration** - Fetch latest headlines on any topic via NewsAPI
 - ✅ **Weather Reports** - Real-time weather data for any location
@@ -132,7 +132,7 @@ Create a `.env` file in the project root:
 #### For Full AI Version (`turing_assistant.py`)
 ```env
 # OpenAI API Key (for AI responses) - REQUIRED
-OPEN_API_KEY=your_openrouter_api_key_here
+OPEN_API_KEY=your_openai_api_key_here
 
 # NewsAPI Key (for news fetching) - REQUIRED
 NEWS_API_KEY=your_newsapi_key_here
@@ -190,7 +190,7 @@ WEATHER_API_KEY=your_weather_api_key_here
 python turing_assistant.py
 ```
 
-**Requirements:** All three API keys (OpenRouter + NewsAPI + Weather)
+**Requirements:** All three API keys (OpenAI + NewsAPI + Weather)
 
 ---
 
@@ -206,7 +206,7 @@ python turing_assistant.py
 python Non_AI_Version.py
 ```
 
-**Requirements:** Only NewsAPI + Weather API (OpenRouter not needed!)
+**Requirements:** Only NewsAPI + Weather API (OpenAI not needed!)
 
 > 💰 **Cost Comparison:** Non-AI version is 100% free after getting free API keys. Full AI version costs ~$0.01-0.05 per conversation depending on usage.
 
@@ -634,7 +634,7 @@ turing-voice-assistant/
 | **AI Conversations** | ✅ | ❌ |
 | **Question Answering** | ✅ | ❌ |
 | **Context Awareness** | ✅ | ❌ |
-| **OpenRouter API** | Required | Not Needed |
+| **OpenAI API** | Required | Not Needed |
 | **Monthly Cost** | ~$1-5 | $0 |
 | **Response Time** | 1-3 seconds | Instant |
 | **File Size** | ~50 MB | ~45 MB |
