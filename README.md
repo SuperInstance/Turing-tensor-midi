@@ -23,7 +23,7 @@
 
 | Version | File | AI Chat | API Required | Best For |
 |---------|------|---------|--------------|----------|
-| 🤖 **Full AI** | `turing_assistant.py` | ✅ Yes | OpenRouter API | Advanced conversations & queries |
+| 🤖 **Full AI** | `turing_assistant.py` | ✅ Yes | OpenAI API | Advanced conversations & queries |
 | ⚡ **Non-AI** | `Non_AI_Version.py` | ❌ No | News & Weather only | Basic commands, no AI cost |
 
 > 💡 **New to Turing?** Start with `Non_AI_Version.py` - it works out of the box with just News and Weather APIs!
