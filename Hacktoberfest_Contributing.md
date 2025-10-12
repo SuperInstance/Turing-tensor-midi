@@ -32,7 +32,7 @@ We use the following labels to help you find suitable issues:
 **To get started:**
 
 1.  Go to the **[Issues page]**(https://github.com/Shashank-Tripathi-07/Turing-An_AI_Integrated_Real-time_Assistant/issues).
-2.  Filter issues by the **`hacktoberfest`** label or start a new issue if you find a new issue.
+2.  Filter issues by the **`hacktoberfest`** label or start a new issue if you find a new issue in the codebase
 3.  Comment on the issue you'd like to work on to let others know you've claimed it.
 
 ---
