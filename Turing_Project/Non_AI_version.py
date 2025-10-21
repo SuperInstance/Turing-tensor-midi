@@ -98,53 +98,6 @@ def takeCommand():
             print(f"[Speech Recognition Error]: {e}")
             return None
 
-def chat_with_gpt_oss_20b(user_query):
-    """Sends query to GPT-OSS-20B model via OpenRouter API."""
-    if not OPENROUTER_API_KEY:
-        return "I'm sorry sir, the AI service is not configured properly."
-    
-    try:
-        headers = {
-            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-            "Content-Type": "application/json"
-        }
-        
-        data = {
-            "model": "openai/gpt-oss-20b:free",
-            "messages": [
-                {
-                    "role": "system",
-                    "content": (
-                        "You are Jarvis, a virtual assistant. "
-                        "You must be polite, professional, formal, and precise in your responses. "
-                        "Always follow the user's instructions carefully and clearly."
-                    )
-                },
-                {
-                    "role": "user",
-                    "content": user_query
-                }
-            ],
-            "temperature": 0.60,
-            "max_tokens": 350,
-            "top_p": 0.95
-        }
-        
-        response = requests.post(
-            url="https://openrouter.ai/api/v1/chat/completions",
-            headers=headers,
-            data=json.dumps(data)
-        )
-        
-        response.raise_for_status()
-        result = response.json()
-        assistant_message = result["choices"][0]["message"]["content"]
-        return assistant_message.strip()
-    
-    except Exception as e:
-        print(f"[Jarvis GPT-OSS-20B Error]: {e}")
-        return "I'm sorry sir, I am currently unable to process that request."
-
 def get_weather(location):
     """Fetches weather information for a given location."""
     say(f"Fetching weather details for {location}")
@@ -613,3 +566,4 @@ if __name__ == '__main__':
     startup()
 
     main()
+
