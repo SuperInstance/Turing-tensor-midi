@@ -386,7 +386,7 @@ def main_active_loop():
         if site_opened:
             continue
 
-        # --- Other Commands ---
+        # --- System Commands ---
         if "hi Turing" in query or "hello Turing" in query:
             say("Good day, sir. How may I assist you?")
         elif "who are you" in query or "introduce yourself" in query:
@@ -502,7 +502,7 @@ def get_weather(location):
         data = requests.get(url).json()
         if "days" in data:
             today = data["days"][0]
-            report = f"The current temperature in {location} is {today['temp']}°C. " \
+            report = f"The current temperature in {location} is {today['temp']}°C. " 
                      f"Weather: {today['conditions']}. Humidity: {today['humidity']}%. Wind: {today['windspeed']} km/h."
             say(report)
         else:
@@ -539,3 +539,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
