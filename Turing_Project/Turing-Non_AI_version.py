@@ -95,7 +95,7 @@ def takeCommand():
             return None
         except sr.RequestError as e:
             say("Network issue detected. Please check your connection.")
-            print(f"[Speech Recognition Error]: {e}")
+            print("Network Issue...check connection and retry")
             return None
 
 def get_weather(location):
@@ -566,4 +566,5 @@ if __name__ == '__main__':
     startup()
 
     main()
+
 
