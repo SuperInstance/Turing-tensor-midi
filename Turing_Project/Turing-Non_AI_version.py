@@ -814,15 +814,14 @@ def main():
         
         else:
             # Fallback to GPT
-            print("Command not recognized. Asking GPT-OSS-20B...")
-            response = chat_with_gpt_oss_20b(query)
-            if response:
-                say(response)
+            print("Command not recognized. please try again...")
+            say("Couldn't understand you, please try again...")
 
 if __name__ == '__main__':
     startup()
 
     main()
+
 
 
 
