@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turing Tensor MIDI — FLUX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header">
+    <div class="brand">
+      <span class="logo">◈</span>
+      <h1>Turing Tensor MIDI</h1>
+      <span class="tag">FLUX Conservation Spectral System</span>
+    </div>
+    <div class="header-controls">
+      <button id="btn-play" title="Play / Pause">▶</button>
+      <button id="btn-reset" title="Reset">↺</button>
+      <span class="status" id="status">IDLE</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Piano Roll -->
+    <section class="panel piano-panel">
+      <h2>Piano Roll <small>Conservation Ratio Overlay</small></h2>
+      <canvas id="piano-canvas" width="1200" height="320"></canvas>
+      <div class="piano-legend">
+        <span class="swatch cr-high"></span> CR ≥ 0.85 (consonant)
+        <span class="swatch cr-mid"></span> CR 0.50–0.84
+        <span class="swatch cr-low"></span> CR &lt; 0.50 (dissonant)
+      </div>
+    </section>
+
+    <!-- CR Dashboard -->
+    <section class="panel cr-panel">
+      <h2>Conservation Ratio Dashboard</h2>
+      <div class="cr-meters">
+        <div class="cr-card" data-progression="ii-V-I">
+          <div class="cr-label">ii–V–I in C</div>
+          <div class="cr-value" id="cr-iivi">0.94</div>
+          <div class="cr-sigma">+4.06σ above random</div>
+          <div class="cr-bar"><div class="cr-fill" style="width:94%"></div></div>
+        </div>
+        <div class="cr-card" data-progression="blues">
+          <div class="cr-label">12-Bar Blues</div>
+          <div class="cr-value" id="cr-blues">0.87</div>
+          <div class="cr-sigma">High preservation</div>
+          <div class="cr-bar"><div class="cr-fill" style="width:87%"></div></div>
+        </div>
+        <div class="cr-card" data-progression="chromatic">
+          <div class="cr-label">Chromatic Run</div>
+          <div class="cr-value" id="cr-chromatic">0.62</div>
+          <div class="cr-sigma">Moderate</div>
+          <div class="cr-bar"><div class="cr-fill" style="width:62%"></div></div>
+        </div>
+        <div class="cr-card" data-progression="random">
+          <div class="cr-label">Random Notes</div>
+          <div class="cr-value" id="cr-random">0.31</div>
+          <div class="cr-sigma">Baseline</div>
+          <div class="cr-bar"><div class="cr-fill" style="width:31%"></div></div>
+        </div>
+      </div>
+      <div class="cr-live">
+        <span class="cr-live-label">Live CR</span>
+        <span class="cr-live-value" id="cr-live">—</span>
+      </div>
+    </section>
+
+    <!-- Two-column row -->
+    <div class="row">
+      <!-- T-Minus Event Panel -->
+      <section class="panel tminus-panel">
+        <h2>T-Minus Event Prediction</h2>
+        <ul id="tminus-events">
+          <li class="tminus-item" data-t="8">
+            <span class="tminus-label">Bridge</span>
+            <span class="tminus-countdown">T-8 bars</span>
+            <div class="tminus-bar"><div class="tminus-fill" style="width:20%"></div></div>
+          </li>
+          <li class="tminus-item" data-t="4">
+            <span class="tminus-label">Key Change</span>
+            <span class="tminus-countdown">T-4 bars</span>
+            <div class="tminus-bar"><div class="tminus-fill" style="width:40%"></div></div>
+          </li>
+          <li class="tminus-item" data-t="2">
+            <span class="tminus-label">Chord Change</span>
+            <span class="tminus-countdown">T-2 beats</span>
+            <div class="tminus-bar"><div class="tminus-fill" style="width:60%"></div></div>
+          </li>
+          <li class="tminus-item" data-t="1">
+            <span class="tminus-label">Note Resolution</span>
+            <span class="tminus-countdown">T-1 beat</span>
+            <div class="tminus-bar"><div class="tminus-fill" style="width:85%"></div></div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- FLUX Translation Panel -->
+      <section class="panel flux-panel">
+        <h2>FLUX Translation Pipeline</h2>
+        <div id="flux-pipeline">
+          <div class="flux-stage" id="flux-midi">
+            <span class="flux-icon">♩</span>
+            <span class="flux-name">MIDI</span>
+            <span class="flux-data">Note: C4 Vel: 96</span>
+          </div>
+          <div class="flux-arrow">→</div>
+          <div class="flux-stage" id="flux-spectral">
+            <span class="flux-icon">∿</span>
+            <span class="flux-name">Spectral</span>
+            <span class="flux-data">f₀=261.6Hz A=-6.2dB</span>
+          </div>
+          <div class="flux-arrow">→</div>
+          <div class="flux-stage" id="flux-tensor">
+            <span class="flux-icon">⬡</span>
+            <span class="flux-name">Tensor</span>
+            <span class="flux-data">CR=0.94 dim=12</span>
+          </div>
+          <div class="flux-arrow">→</div>
+          <div class="flux-stage active" id="flux-output">
+            <span class="flux-icon">◈</span>
+            <span class="flux-name">Output</span>
+            <span class="flux-data">Conserved phrase</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Agent Fleet Panel -->
+    <section class="panel fleet-panel">
+      <h2>Agent Fleet — Musical Rooms</h2>
+      <div class="fleet-grid">
+        <div class="room-card" id="room-bass">
+          <div class="room-header">
+            <span class="room-icon">🎸</span>
+            <span class="room-name">Bass Room</span>
+          </div>
+          <ul class="agent-list" id="agents-bass"></ul>
+        </div>
+        <div class="room-card" id="room-melody">
+          <div class="room-header">
+            <span class="room-icon">🎹</span>
+            <span class="room-name">Melody Room</span>
+          </div>
+          <ul class="agent-list" id="agents-melody"></ul>
+        </div>
+        <div class="room-card" id="room-harmony">
+          <div class="room-header">
+            <span class="room-icon">🎻</span>
+            <span class="room-name">Harmony Room</span>
+          </div>
+          <ul class="agent-list" id="agents-harmony"></ul>
+        </div>
+        <div class="room-card" id="room-rhythm">
+          <div class="room-header">
+            <span class="room-icon">🥁</span>
+            <span class="room-name">Rhythm Room</span>
+          </div>
+          <ul class="agent-list" id="agents-rhythm"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Turing Tensor MIDI × FLUX</span>
+    <span>Conservation Spectral Theory — Real-Time Visualization</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
