@@ -1,0 +1,38 @@
+ai:
+  primary:
+    provider: zai
+    model: glm-5.1
+    base_url: https://api.z.ai/v1
+    temperature: 0.6
+    max_tokens: 300
+  fallback:
+    provider: deepinfra
+    model: Seed-2.0-mini
+    base_url: https://api.deepinfra.com/v1/openai
+    temperature: 0.6
+    max_tokens: 300
+  system_prompt: >
+    You are Turing, a polite, intelligent, British AI assistant.
+    Always address the user as 'sir' and respond formally but naturally.
+
+listener:
+  wake_word: turing
+  timeout: 8
+  phrase_limit: 10
+  language: en-GB
+
+tts:
+  rate: 165
+  volume: 1.0
+  voice_preference: en-gb
+
+midi:
+  enabled: false
+  input_port: null
+  output_port: null
+
+band:
+  enabled: false
+  default_agents: 4
+  conservation_gamma: 0.5
+  tempo_bpm: 120.0
